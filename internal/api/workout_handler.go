@@ -38,10 +38,8 @@ func (wh *WorkoutHandler) HandleGetWorkoutByID(w http.ResponseWriter, r *http.Re
 
 func (wh *WorkoutHandler) HandleCreateWorkout(w http.ResponseWriter, r *http.Request) {
 	var workout store.Workout
-	fmt.Println("HEREA")
 	err := json.NewDecoder(r.Body).Decode(&workout)
 	if err != nil {
-		fmt.Println("HEREB")
 		fmt.Println(err)
 		http.Error(w, "failed to create workout", http.StatusInternalServerError)
 		return
