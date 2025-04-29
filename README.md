@@ -2,7 +2,7 @@
 
 This project builds an API with authentication middleware and postgres database, to allow users to login and create a workout schedule (including view, update, and delete). There is no UI component and all actions are carried out using curl requests, or as in my case, via Postman.
 
-The project also features database build and migration scripts that show how these evolve from stage to stage, including adding a column after the table already exists.
+It also features database build and migration scripts that show how these evolve from stage to stage, including adding a column after the table already exists.
 
 ## My Experience
 
