@@ -47,7 +47,7 @@ func (h *TokenHandler) HandleCreateToken(w http.ResponseWriter, r *http.Request)
 	}
 
 	passwordsDoMatch, err := user.PasswordHash.Matches(req.Password)
-	if err != nil || user == nil {
+	if err != nil {
 		h.logger.Printf("ERROR: PasswordHash.Matches: %v", err)
 		utils.WriteJSON(w, http.StatusInternalServerError, utils.Envelope{"error": "internal server error"})
 		return
@@ -59,7 +59,7 @@ func (h *TokenHandler) HandleCreateToken(w http.ResponseWriter, r *http.Request)
 	}
 
 	token, err := h.tokenStore.CreateNewToken(user.ID, 24*time.Hour, tokens.ScopeAuth)
-	if err != nil || user == nil {
+	if err != nil {
 		h.logger.Printf("ERROR: Creating Token: %v", err)
 		utils.WriteJSON(w, http.StatusInternalServerError, utils.Envelope{"error": "internal server error"})
 		return
