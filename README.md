@@ -1,4 +1,4 @@
-# Front End Masters Project: Go for Pressional Developers
+# Front End Masters Project: Go for Professional Developers
 
 This project builds an API with authentication middleware and postgres database, to allow users to login and create a workout schedule (including view, update, and delete). There is no UI component and all actions are carried out using curl requests, or as in my case, via Postman.
 
